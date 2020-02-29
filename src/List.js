@@ -11,9 +11,10 @@
 // content prop is string of card's content
 import React from 'react';
 import Card from './Card';
-import './List.css';
+import './styles/List.css';
 
 export default function List(props) {
+  console.log(props);
   return (
     <section className='List'>
       <header className='List-header'>

@@ -6,13 +6,17 @@
 //props will be passed in for each card from list component
 
 import React from 'react';
-import './Card.css';
+import './styles/Card.css';
 
 export default function Card(props) {
   return (
     <div className='Card'>
       <h3>{props.title}</h3>
       <p>{props.content}</p>
+
+      <button type='button'>
+       Delete
+     </button>
     </div>
   )
 }
