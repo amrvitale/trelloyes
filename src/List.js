@@ -10,11 +10,10 @@
 //title prop is string for card's title
 // content prop is string of card's content
 import React from 'react';
-import Card from './Card';
-import './styles/List.css';
+import Card from './Card'
+import './List.css';
 
 export default function List(props) {
-  console.log(props);
   return (
     <section className='List'>
       <header className='List-header'>
@@ -24,11 +23,24 @@ export default function List(props) {
         {props.cards.map((card) =>
           <Card
             key={card.id}
+            id={card.id}
             title={card.title}
             content={card.content}
-            />
-          )}
+            onClickDelete={props.onClickDelete}
+          />
+        )}
+        <button
+          type='button'
+          className='List-add-button'
+          onClick={() => props.onClickAdd(props.id)}
+        >
+          + Add Random Card
+        </button>
       </div>
     </section>
   )
+}
+
+List.defaultProps = {
+  onClickAdd: () => {},
 }

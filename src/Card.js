@@ -6,17 +6,23 @@
 //props will be passed in for each card from list component
 
 import React from 'react';
-import './styles/Card.css';
+import './Card.css';
 
 export default function Card(props) {
   return (
     <div className='Card'>
+      <button
+        type='button'
+        onClick={() => props.onClickDelete(props.id)}
+      >
+        delete
+      </button>
       <h3>{props.title}</h3>
       <p>{props.content}</p>
-
-      <button type='button'>
-       Delete
-     </button>
     </div>
   )
+}
+
+Card.propTypes = {
+  onClickDelete: () => {}
 }
